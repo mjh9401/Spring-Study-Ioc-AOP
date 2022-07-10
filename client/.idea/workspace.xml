@@ -5,22 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ddd0ca32-b377-4b5d-b92a-9567a8c38955" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/client.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/example/client/controller/ApiController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/example/client/dto/UserResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/example/client/service/RestTemplateService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../server/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../server/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../server/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../server/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../server/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../server/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../server/.idea/server.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../server/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../server/server/src/main/java/com/example/server/controller/ServerApiController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../server/server/src/main/java/com/example/server/dto/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/example/client/dto/UserRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/example/client/controller/ApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/example/client/controller/ApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/example/client/service/RestTemplateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/example/client/service/RestTemplateService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/server/src/main/java/com/example/server/controller/ServerApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/server/src/main/java/com/example/server/controller/ServerApiController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +71,11 @@
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.client.dto" />
+    </key>
+  </component>
   <component name="RunManager" selected="애플리케이션.ClientApplication">
     <configuration name="ClientApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.client.ClientApplication" />
