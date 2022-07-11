@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc2a0ef7-48a4-4310-97db-a0b4226849b1" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/../client/client/src/main/java/com/example/client/dto/UserRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/client/src/main/java/com/example/client/dto/Req.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/dto/Req.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/client/src/main/java/com/example/client/controller/ApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/client/src/main/java/com/example/client/controller/ApiController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/client/src/main/java/com/example/client/service/RestTemplateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/client/src/main/java/com/example/client/service/RestTemplateService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/ServerApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/ServerApiController.java" afterDir="false" />
     </list>
@@ -61,7 +64,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/ws/SpringStudy/filter",
+    "last_opened_file_path": "C:/ws/SpringStudy/client",
     "project.structure.last.edited": "모듈",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
