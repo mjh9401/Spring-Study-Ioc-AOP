@@ -23,7 +23,7 @@ public class WishListRepositoryTest {
         wishList.setImageLink("");
         wishList.setVisit(false);
         wishList.setVisitCount(0);
-        wishList.setLastVisitTime(null);
+        wishList.setLastVisit(null);
 
         return wishList;
     }
