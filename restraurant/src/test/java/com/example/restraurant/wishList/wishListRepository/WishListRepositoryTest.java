@@ -1,4 +1,4 @@
-package com.example.restraurant.wishListRepository;
+package com.example.restraurant.wishList.wishListRepository;
 
 import com.example.restraurant.wishlist.entity.WishLIstEntity;
 import com.example.restraurant.wishlist.repository.WishLIstRepository;

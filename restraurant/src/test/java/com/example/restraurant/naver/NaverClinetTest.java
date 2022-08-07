@@ -19,7 +19,7 @@ public class NaverClinetTest {
         search.setQuery("갈비집");
 
         var result = naverClient.searchLocal(search);
-        System.out.println(result);
+        System.out.println(result.getItems().stream().findFirst().get().getCategory());
     }
 
     @Test
