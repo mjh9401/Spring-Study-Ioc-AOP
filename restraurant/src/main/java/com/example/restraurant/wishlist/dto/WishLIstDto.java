@@ -1,6 +1,5 @@
 package com.example.restraurant.wishlist.dto;
 
-import com.example.restraurant.db.MemoryDbEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,7 +10,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Data
 public class WishLIstDto {
-    private int index;
+    private Integer index;
     private String title;
     private String category;
     private String address;

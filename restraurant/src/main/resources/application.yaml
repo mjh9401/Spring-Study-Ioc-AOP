@@ -3,6 +3,12 @@ naver:
     search:
       local: https://openapi.naver.com/v1/search/local.json
       image: https://openapi.naver.com/v1/search/image
-    client:
-      id: JQ96UQzhDpErYl0Tf8YZ
-      secret: JQ96UQzhDpErYl0Tf8YZ
+  client:
+    id: JQ96UQzhDpErYl0Tf8YZ
+    secret: shmGJzAgKs
+
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+

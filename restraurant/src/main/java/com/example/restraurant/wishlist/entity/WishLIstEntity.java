@@ -8,9 +8,9 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
 public class WishLIstEntity extends MemoryDbEntity {
     private String title;
     private String category;
