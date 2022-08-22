@@ -31,6 +31,34 @@ class UserRepositoryTest {
 
     }
 
+    @Test
+    void select(){
+        System.out.println(userRepository.findByName("dennis"));
+
+        /**
+         * findBy, getBy, readBy, queryBy, searchBy, streamBy, find..By는
+         * 해당 파라미터를 where절에 넣어서 해당 하는 값을 가져오는 select절을 실행한다.
+         */
+        System.out.println("findByEmail: "+userRepository.findByEmail("martin@fastcampus.com"));
+        System.out.println("getByEmail: "+userRepository.getByEmail("martin@fastcampus.com"));
+        System.out.println("readByEmail: "+userRepository.readByEmail("martin@fastcampus.com"));
+        System.out.println("queryByEmail: "+userRepository.queryByEmail("martin@fastcampus.com"));
+        System.out.println("searchByEmail: "+userRepository.searchByEmail("martin@fastcampus.com"));
+        System.out.println("streamByEmail: "+userRepository.streamByEmail("martin@fastcampus.com"));
+        System.out.println("findUserByEmail: "+userRepository.findUserByEmail("martin@fastcampus.com"));
+
+        System.out.println("findSomethingByEmail: "+userRepository.findSomethingByEmail("martin@fastcampus.com"));
+
+        /**
+         *  select 키워드 + Top+ 숫자 또는 select 키워드 + First+ 숫자 : select 결과의 숫자의 만큼만 리턴한다.
+         *  ex) Top2 or First 2 => select 결과의 상위 2개만 리턴한다.
+         */
+        System.out.println("findTop2ByName: "+userRepository.findTop2ByName("martin"));
+        System.out.println("findFirst2ByName: "+userRepository.findFirst2ByName("martin"));
+        System.out.println("findLast1ByName: "+userRepository.findLast1ByName("martin"));
+
+    }
+
 
 
 }
