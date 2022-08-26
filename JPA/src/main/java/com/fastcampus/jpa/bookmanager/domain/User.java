@@ -11,10 +11,6 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
-/**
- * @author Martin
- * @since 2021/03/10
- */
 @NoArgsConstructor
 @AllArgsConstructor
 @RequiredArgsConstructor

@@ -10,12 +10,11 @@ import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 
+import java.time.LocalDateTime;
+
 import static org.springframework.data.domain.ExampleMatcher.GenericPropertyMatchers.contains;
 
-/**
- * @author Martin
- * @since 2021/03/10
- */
+
 @SpringBootTest
 class UserRepositoryTest {
     @Autowired
@@ -56,9 +55,37 @@ class UserRepositoryTest {
         System.out.println("findTop2ByName: "+userRepository.findTop2ByName("martin"));
         System.out.println("findFirst2ByName: "+userRepository.findFirst2ByName("martin"));
         System.out.println("findLast1ByName: "+userRepository.findLast1ByName("martin"));
+        /**
+         * findByEmailAndName => Email과 Name이 모두 일치하는 데이터만 찾는 AND연산
+         * findByEmailOrName => Email과 Name중 둘 중 하나라도 일치하는 데이터를 찾는 OR연산
+         */
+        System.out.println("findByEmailAndName: "+userRepository.findByEmailAndName("martin@fastcampus.com","dennis"));
+        System.out.println("findByEmailOrName: "+userRepository.findByEmailOrName("martin@fastcampus.com","dennis"));
+
+        /**
+         *  findByCreatedAtAfter => createdAt 값보다 작은값을 찾는 연산 => cratedAt > ?
+         *  findByCratedAtBefore => createdAt 값도다 큰값을 찾는 연산 => createdAt < ?
+         *  Atfer나 Before는 날짜계산에 주로사용
+         */
+        System.out.println("findByCreatedAtAfter: "+userRepository.findByCreatedAtAfter(LocalDateTime.now().minusDays(1L)));
+        System.out.println("findByIdAfter: "+userRepository.findByIdAfter(4L));
+
+        /**
+         * findByCreatedAtGreaterThan => createdAt 값보다 작은값을 찾는 연산 => createdAt >?
+         * findByCreatedAtGreaterThanEqual => cratedAt 값과 같거나 작은 값은값을 찾는 연산 => createdAt >= ?
+         */
+        System.out.println("findByCreatedAtGreaterThan: "+userRepository.findByCreatedAtGreaterThan(LocalDateTime.now().minusDays(1L)));
+        System.out.println("findByCreatedAtGreaterThanEqual: "+userRepository.findByCreatedAtGreaterThanEqual(LocalDateTime.now().minusDays(1L)));
+
+        /**
+         * findByCreatedAtBetween은 두 값을 포함한 영역의 값을 찾는다 = > between 어제날짜 and 내일날짜 => 어제부터 내일까지의 날짜값을 가져온다.
+         * 이거는 findByIdGreaterThanEqualAndIdLessThanEqual와 같다.
+         */
+        System.out.println("findByCreatedAtBetween: "+userRepository.findByCreatedAtBetween(LocalDateTime.now().minusDays(1L),LocalDateTime.now().plusDays(1L)));
+        System.out.println("findByIdBetween: "+userRepository.findByIdBetween(1L,3L));
+        System.out.println("findByIdGreaterThanEqualAndIdLessThanEqual: "+userRepository.findByIdGreaterThanEqualAndIdLessThanEqual(1L,3L));
 
     }
-
 
 
 }
