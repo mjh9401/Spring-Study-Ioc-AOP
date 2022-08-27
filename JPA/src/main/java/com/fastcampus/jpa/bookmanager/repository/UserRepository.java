@@ -5,9 +5,11 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 
@@ -49,5 +51,8 @@ public interface UserRepository extends JpaRepository<User, Long> {
     List<User> findFirstByName(String name, Sort sort);
     
     // 페이징을 위한 메소드
-    Page<User> findByName(String name, Pageable pageable); 
+    Page<User> findByName(String name, Pageable pageable);
+    /*@Query는 JPA의 도움받아 쿼리를 생성하지 않고 직접 쿼리를 작성할 때 사용한다. nativeQuery는 true로 해야한다.*/
+    @Query(value = "select * from user limit 1;",nativeQuery = true)
+    Map<String,Object> findRowRecord();
 }

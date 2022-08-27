@@ -1,5 +1,6 @@
 package com.fastcampus.jpa.bookmanager.repository;
 
+import com.fastcampus.jpa.bookmanager.domain.Gender;
 import com.fastcampus.jpa.bookmanager.domain.User;
 import org.assertj.core.util.Lists;
 import org.junit.jupiter.api.Test;
@@ -131,4 +132,27 @@ class UserRepositoryTest {
         System.out.println("findByNameWithPaging: "+userRepository.findByName("martin",PageRequest.of(1,1,Sort.by(Sort.Order.desc("id")))).getTotalElements());
     }
 
+    @Test
+    void insertAndUpdateTest(){
+        User user = new User();
+        user.setName("martin");
+        user.setEmail("martin@fastcampus.com");
+
+        userRepository.save(user);
+
+        User user2 = userRepository.findById(1L).orElseThrow(RuntimeException::new);
+        user2.setName("marrrrrrtin");
+
+        userRepository.save(user2);
+    }
+
+    @Test
+    void enumTest(){
+        User user = userRepository.findById(1L).orElseThrow(RuntimeException::new);
+        user.setGender(Gender.MALE);
+
+        userRepository.save(user);
+        userRepository.findAll().forEach(System.out::println);
+        System.out.println(userRepository.findRowRecord().get("gender"));
+    }
 }
