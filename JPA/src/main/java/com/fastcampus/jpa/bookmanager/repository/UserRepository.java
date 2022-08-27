@@ -11,6 +11,9 @@ import java.util.Set;
 
 public interface UserRepository extends JpaRepository<User, Long> {
     Set<User> findByName(String name);
+    Set<User> findUserByNameIs(String name);
+    Set<User> findUserByName(String name);
+    Set<User> findUserByNameEquals(String name);
     User findByEmail(String email);
     User getByEmail(String email);
     User readByEmail(String email);
@@ -31,4 +34,11 @@ public interface UserRepository extends JpaRepository<User, Long> {
     List<User> findByCreatedAtBetween(LocalDateTime yesterday, LocalDateTime tomorrow);
     List<User> findByIdBetween(Long id1, Long id2);
     List<User> findByIdGreaterThanEqualAndIdLessThanEqual(Long id1, Long id2);
+    List<User> findByIdIsNotNull();
+//    List<User> findByAddressIsNotEmpty(); // where exist(select절)을 사용함 name is not null and name != "" 이거 아님
+    List<User> findByNameIn(List<String>names);
+    List<User> findByNameStartingWith(String name);
+    List<User> findByNameEndingWith(String name);
+    List<User> findByNameContains(String name);
+    List<User> findByNameLike(String name);
 }

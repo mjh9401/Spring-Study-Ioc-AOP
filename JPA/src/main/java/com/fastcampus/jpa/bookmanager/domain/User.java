@@ -1,9 +1,9 @@
 package com.fastcampus.jpa.bookmanager.domain;
 
 import java.time.LocalDateTime;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import java.util.List;
+import javax.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -31,4 +31,7 @@ public class User {
     private LocalDateTime createdAt;
 
     private LocalDateTime updatedAt;
+
+//    @OneToMany(fetch = FetchType.EAGER)
+//    private List<Address> address;
 }
