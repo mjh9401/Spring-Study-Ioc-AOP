@@ -1,12 +1,13 @@
 package com.fastcampus.jpa.bookmanager.repository;
 
 import com.fastcampus.jpa.bookmanager.domain.User;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 
 
@@ -46,4 +47,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
     List<User> findTopByNameOrderByIdDesc(String name);
     List<User> findFirstByNameOrderByIdDescEmailAsc(String name);
     List<User> findFirstByName(String name, Sort sort);
+    
+    // 페이징을 위한 메소드
+    Page<User> findByName(String name, Pageable pageable); 
 }

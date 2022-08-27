@@ -123,7 +123,12 @@ class UserRepositoryTest {
         System.out.println("findTopByNameOrderByIdDesc: "+userRepository.findTopByNameOrderByIdDesc("martin"));
         System.out.println("findFirstByNameOrderByIdDescEmailAsc: "+userRepository.findFirstByNameOrderByIdDescEmailAsc("martin"));
         System.out.println("findFirstByNameWithSortParams: "+userRepository.findFirstByName("martin",Sort.by(Sort.Order.desc("id"), Sort.Order.asc("email"))));
-
+        /**
+         * pageRequet로 페이징관련 파라미터를 보내고 Page가 페이징관련 파라미터를 받는 역할은 한다.
+         * pegaReqest의 of에 page,size,sort 파라미터를 입력한다.
+         * page는 0가 시작, size는 한 페이지를 가져온 데이터의 크기, sort는 Order클래스를 쓴다.
+         */
+        System.out.println("findByNameWithPaging: "+userRepository.findByName("martin",PageRequest.of(1,1,Sort.by(Sort.Order.desc("id")))).getTotalElements());
     }
 
 }
