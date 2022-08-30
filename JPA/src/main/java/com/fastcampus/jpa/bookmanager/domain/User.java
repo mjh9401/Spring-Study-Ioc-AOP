@@ -30,8 +30,9 @@ import lombok.RequiredArgsConstructor;
 * @Table에서 name은 말 그래도 테이블 이름, indexes={@Index(columnList="해당필드(해당컬럼)")을 하면 해당테이블에 index가 걸린다. }
 * 그렇지만 indexes는 왠만하면 DB단에서 작업을 한다. 여기서 Index를 걸어도 crud할떄 index가 적용되지 않는경우도 있다고 한다.
 */
-@Table(name = "user", indexes = {@Index(columnList = "name")})
-public class User {
+//@Table(name = "user", indexes = {@Index(columnList = "name")})
+@EntityListeners(value = MyEntityListener.class)
+public class User implements Auditable {
     @Id
     @GeneratedValue
     private Long id;
@@ -58,4 +59,28 @@ public class User {
 
 //    @OneToMany(fetch = FetchType.EAGER)
 //    private List<Address> address;
+
+    /*Entitiy Listener의 종류*/
+    /* Listenser는 이벤트가 발생하면 그 이벤트가 발생하기전에 실행하는 메소드들*/
+    /*
+    @PrePersist : insert 메소드가 호출 되기전에 작동
+    @PreUpdate : Merge 메소드가 호출 되기전에 작동
+    @PreRemove Delete 메소드가 호출 되기전에 작동
+    @PostPersist : insert 메소드가 호출 된 후에 작동
+    @PostUpdate : Merge 메소드가 호출 된 후에 작동
+    @PostRemove : Delete 메소드가 호출 된 후에 작동
+    @PostLoad : select 조회직 후에 작동
+     */
+
+//    @PrePersist
+//    public void prePersist(){
+//        this.createdAt = LocalDateTime.now();
+//        this.updatedAt = LocalDateTime.now();
+//    }
+//
+//    @PreUpdate
+//    public void PreUpdate(){
+//        this.updatedAt = LocalDateTime.now();
+//    }
+
 }
