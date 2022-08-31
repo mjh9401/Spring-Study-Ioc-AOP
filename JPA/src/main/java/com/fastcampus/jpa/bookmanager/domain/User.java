@@ -1,20 +1,21 @@
 package com.fastcampus.jpa.bookmanager.domain;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import javax.persistence.*;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import com.fastcampus.jpa.bookmanager.domain.listener.Auditable;
+import com.fastcampus.jpa.bookmanager.domain.listener.UserEnitityListener;
+import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Data
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 @Builder
 /*
 * DB테이블 매핑 @Entity가 붙은 클래스는 JPA가 관리함
@@ -31,8 +32,8 @@ import lombok.RequiredArgsConstructor;
 * 그렇지만 indexes는 왠만하면 DB단에서 작업을 한다. 여기서 Index를 걸어도 crud할떄 index가 적용되지 않는경우도 있다고 한다.
 */
 //@Table(name = "user", indexes = {@Index(columnList = "name")})
-@EntityListeners(value = MyEntityListener.class)
-public class User implements Auditable {
+@EntityListeners(value = {UserEnitityListener.class})
+public class User extends BaseEntity implements Auditable  {
     @Id
     @GeneratedValue
     private Long id;
@@ -48,10 +49,12 @@ public class User implements Auditable {
     private Gender gender;
 
     /*@Column에는 insertable, updatable이 잇는데 해당 값을 true로 변경하면 insert, update 작업시 해당 필드에 해당하는 칼럼은 작업하지 않는다.*/
-    @Column(updatable = false)
-    private LocalDateTime createdAt;
-
-    private LocalDateTime updatedAt;
+//    @Column(updatable = false)
+//    @CreatedDate
+//    private LocalDateTime createdAt;
+//
+//    @LastModifiedDate
+//    private LocalDateTime updatedAt;
     
     /*@Transient은 table 생성 및 삭제 데이터 CRUD를 할 때 해당되지 않게 하는 어노테이션*/
     @Transient

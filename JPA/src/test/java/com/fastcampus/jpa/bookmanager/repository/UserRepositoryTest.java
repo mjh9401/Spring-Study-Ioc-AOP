@@ -2,6 +2,7 @@ package com.fastcampus.jpa.bookmanager.repository;
 
 import com.fastcampus.jpa.bookmanager.domain.Gender;
 import com.fastcampus.jpa.bookmanager.domain.User;
+import com.fastcampus.jpa.bookmanager.domain.UserHistory;
 import org.assertj.core.util.Lists;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,8 @@ import static org.springframework.data.domain.ExampleMatcher.GenericPropertyMatc
 class UserRepositoryTest {
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private UserHistoryRepository userHistoryRepository;
 
     @Test
     void crud() { // create, read, update, delete
@@ -154,5 +157,20 @@ class UserRepositoryTest {
         userRepository.save(user);
         userRepository.findAll().forEach(System.out::println);
         System.out.println(userRepository.findRowRecord().get("gender"));
+    }
+
+    @Test
+    void userHistoryTest(){
+        User user = new User();
+        user.setEmail("martin@fastcampus.com");
+        user.setName("martin-new");
+
+        userRepository.save(user);
+
+        user.setName("marint-new-new");
+
+        userRepository.save(user);
+
+        userHistoryRepository.findAll().forEach(System.out::println);
     }
 }
