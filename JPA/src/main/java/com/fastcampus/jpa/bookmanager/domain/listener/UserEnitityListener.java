@@ -5,8 +5,6 @@ import com.fastcampus.jpa.bookmanager.domain.User;
 import com.fastcampus.jpa.bookmanager.domain.UserHistory;
 import com.fastcampus.jpa.bookmanager.repository.UserHistoryRepository;
 import com.fastcampus.jpa.bookmanager.support.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
