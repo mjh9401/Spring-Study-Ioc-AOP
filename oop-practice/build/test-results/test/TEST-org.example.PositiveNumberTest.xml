@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.PositiveNumberTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-09-10T11:23:42" hostname="MOON-LEGION5I" time="0.067">
+  <properties/>
+  <testcase name="[1] 0" classname="org.example.PositiveNumberTest" time="0.064"/>
+  <testcase name="[2] -1" classname="org.example.PositiveNumberTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

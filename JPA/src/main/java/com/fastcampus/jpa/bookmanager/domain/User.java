@@ -1,6 +1,8 @@
 package com.fastcampus.jpa.bookmanager.domain;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.*;
 
 import com.fastcampus.jpa.bookmanager.domain.listener.Auditable;
@@ -85,5 +87,9 @@ public class User extends BaseEntity {
 //    public void PreUpdate(){
 //        this.updatedAt = LocalDateTime.now();
 //    }
+
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id",insertable = false,updatable = false)
+    private List<UserHistory> userHistories = new ArrayList<>();
 
 }
