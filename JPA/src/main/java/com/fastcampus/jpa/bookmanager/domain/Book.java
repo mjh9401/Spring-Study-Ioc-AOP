@@ -19,13 +19,15 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode(callSuper = true)
 public class Book extends BaseEntity {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String category;
     private Long authorId;
     private Long publisherId;
-
+    @OneToOne(mappedBy = "book")
+    @ToString.Exclude
+    private BookReviewInfo bookReviewInfo;
 
 
 }
