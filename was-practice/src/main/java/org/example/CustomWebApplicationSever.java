@@ -10,9 +10,13 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class CustomWebApplicationSever {
     private final int port;
+    private final ExecutorService executorService = Executors.newFixedThreadPool(10);
+
     private static final Logger logger = LoggerFactory.getLogger(CustomWebApplicationSever.class);
 
     public CustomWebApplicationSever(int port) {
@@ -30,9 +34,9 @@ public class CustomWebApplicationSever {
                 logger.info("{CustomWebApplicationServer} client connected!");
 
                 /**
-                 * Step 2 - 사용자 요청이 들어올 때마다 Thread를 새로 생성해서 사용자 요청을 처리하도록 한다.
+                 * Step 3. Thread Pool을 적용해 안정적인 서비스가 가능하도록 한다.
                  */
-                new Thread(new ClinetRequestHandler(clientSocket)).start();
+                executorService.execute(new ClinetRequestHandler(clientSocket));
             }
 
         }

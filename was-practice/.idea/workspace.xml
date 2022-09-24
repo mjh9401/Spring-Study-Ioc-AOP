@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d945f9f0-c881-4005-b542-59a1a241c5ce" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/calculator/ClinetRequestHandler.java" afterDir="false" />
+    <list default="true" id="d945f9f0-c881-4005-b542-59a1a241c5ce" name="변경" comment="&quot;계산기 웹 프로그램 구현하기 2 사용자 요청이 들어올 때마다 쓰레드 생성으로 변경&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CustomWebApplicationSever.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CustomWebApplicationSever.java" afterDir="false" />
     </list>
@@ -133,6 +132,14 @@
       <option name="presentableId" value="Default" />
       <updated>1664008142657</updated>
     </task>
+    <task id="LOCAL-00001" summary="&quot;계산기 웹 프로그램 구현하기 2 사용자 요청이 들어올 때마다 쓰레드 생성으로 변경&quot;">
+      <created>1664027761073</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1664027761073</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -145,6 +152,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="&quot;계산기 웹 프로그램 구현하기 2 사용자 요청이 들어올 때마다 쓰레드 생성으로 변경&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;계산기 웹 프로그램 구현하기 2 사용자 요청이 들어올 때마다 쓰레드 생성으로 변경&quot;" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
