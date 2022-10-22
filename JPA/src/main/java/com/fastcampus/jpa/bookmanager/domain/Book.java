@@ -13,6 +13,7 @@ import javax.persistence.*;
 import java.sql.Array;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Entity
@@ -46,5 +47,13 @@ public class Book extends BaseEntity {
     @ToString.Exclude
     private Publisher publisher;
 
+
+    @ManyToMany
+    @ToString.Exclude
+    private List<Author> authors = new ArrayList<>();
+
+    public void addAuthor(Author... author){
+        Collections.addAll(this.authors,author);
+    }
 
 }
